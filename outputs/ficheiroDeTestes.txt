@@ -1,0 +1,14 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Hello World</title>
+        <style>
+            .classe1{
+                color: green;
+            }
+        </style>
+    </head>
+    <body>
+        <p class='classe1'>Hello World!</p>
+    </body>
+</html>
