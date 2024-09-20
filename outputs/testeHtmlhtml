@@ -1,0 +1,13 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<style>
+.class1{
+color: green;
+}
+</style>
+</head>
+<body>
+<p class='class1'>Ola, Mundo</p>
+</body>
+</html>

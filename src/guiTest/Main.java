@@ -70,7 +70,12 @@ public class Main {
         JTextField textField = new JTextField(20); // Field for file name input
         JLabel contentLabel = new JLabel("Please Enter Content:");
         JTextArea textArea = new JTextArea(10, 40); // Area for file content input
-
+        
+        JComboBox<String> comboBox = new JComboBox<>();
+        comboBox.addItem("html");
+        comboBox.addItem("txt");
+        comboBox.addItem("md");
+        
         JButton sendButton = new JButton("Save File");
         JButton resetButton = new JButton("Reset");
 
@@ -83,7 +88,9 @@ public class Main {
                 String fileName = textField.getText(); // Get file name from the textField
                 String fileContent = textArea.getText(); // Get content from the textArea
                 if (!fileName.isEmpty()) {
-                    te.writeToFile(fileName + ".txt", fileContent); // Save file with provided name
+                    te.writeToFile(fileName + "." + comboBox.getSelectedItem(), fileContent); // Save file with provided name
+                    JOptionPane.showMessageDialog(jframe, "File created!.");
+                    System.exit(0);
                 } else {
                     JOptionPane.showMessageDialog(jframe, "Please enter a valid file name.");
                 }
@@ -104,6 +111,7 @@ public class Main {
         panel.add(textField);
         panel.add(contentLabel);
         panel.add(new JScrollPane(textArea)); // Add scroll to textArea
+        panel.add(comboBox);
         panel.add(sendButton);
         panel.add(resetButton);
         
